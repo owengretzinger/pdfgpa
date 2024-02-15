@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-black: 20 20 20;
+  --color-dark-grey: 86 86 86;
+  --color-light-grey: 158 158 158;
+  --color-yellow: 58 224 103;
+  /* --color-yellow: 251 169 44; */
+  --color-white: 255 255 255;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
