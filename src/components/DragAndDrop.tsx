@@ -11,6 +11,7 @@ export default function DragAndDrop() {
 
   useEffect(() => {
     if (file && !gpa) {
+      console.log(file);
       // process the file
     }
   }, [file]);
@@ -83,6 +84,7 @@ export default function DragAndDrop() {
               multiple={true}
               onChange={handleChange}
               accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
+              name="transcript_file"
             />
 
             <div className="flex items-center gap-2">
