@@ -8,11 +8,29 @@ export default function DragAndDrop() {
   const inputRef = useRef<any>(null);
   const [file, setFile] = useState();
   const [gpa, setGpa] = useState<any>(null);
-
+  // const url = "http://127.0.0.1:5000/gpa";
+  const url = "https://cafentson.pythonanywhere.com/gpa";
   useEffect(() => {
     if (file && !gpa) {
+      const formData = new FormData();
+      formData.append('transcript_file', file);
       console.log(file);
-      // process the file
+      fetch(url, {
+        method: 'POST',
+        body: formData
+      })
+        .then((response) => response.json())
+        .then(
+          (data) => {
+            console.log(data)
+            setGpa(data.gpa)
+          }
+        ).catch(
+          (error) => {
+            console.log(error)
+            setGpa(-1)
+          }
+        );
     }
   }, [file]);
 
@@ -57,9 +75,14 @@ export default function DragAndDrop() {
   return (
     <div className="flex items-center justify-center text-white text-xl">
       {gpa ?
-        <div>
-          <p>Your GPA is {gpa}</p>
-        </div>
+        (gpa == -1) ?
+          <div>
+            <p className="text-2xl">Something went wrong :(</p>
+          </div>
+          :
+          <div>
+            <p className="text-2xl">Your GPA is <span className="font-bold bg-gradient-to-r from-blue-400 to-green-400 text-transparent bg-clip-text animate-gradient">{gpa}</span></p>
+          </div>
         :
         file ?
           <div className="animate-pulse" >
@@ -83,8 +106,7 @@ export default function DragAndDrop() {
               type="file"
               multiple={true}
               onChange={handleChange}
-              accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
-              name="transcript_file"
+              accept=".pdf"
             />
 
             <div className="flex items-center gap-2">
