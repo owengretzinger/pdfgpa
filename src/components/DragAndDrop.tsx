@@ -7,7 +7,7 @@ export default function DragAndDrop() {
   const [dragActive, setDragActive] = useState<boolean>(false);
   const inputRef = useRef<any>(null);
   const [file, setFile] = useState();
-  const [gpa, setGpa] = useState<any>(null);
+  const [gpa, setGpa] = useState<any>(3.8);
   // const url = "http://127.0.0.1:5000/gpa";
   const url = "https://cafentson.pythonanywhere.com/gpa";
   useEffect(() => {
@@ -73,16 +73,23 @@ export default function DragAndDrop() {
   }
 
   return (
-    <div className="flex items-center justify-center text-white text-xl">
+    <div className="flex items-center justify-center text-white text-center text-xl">
       {gpa ?
         (gpa == -1) ?
           <div>
             <p className="text-2xl">Something went wrong :(</p>
           </div>
           :
-          <div>
-            <p className="text-2xl">Your GPA is <span className="font-bold bg-gradient-to-r from-blue-400 to-green-400 text-transparent bg-clip-text animate-gradient">{gpa}</span></p>
-          </div>
+          (gpa < 3.8) ?
+            <div>
+              <p className="text-2xl">Your GPA is <span className="font-bold bg-gradient-to-r from-blue-400 to-green-400 text-transparent bg-clip-text animate-gradient">{gpa}</span></p>
+            </div>
+            :
+            <div>
+              <h3 className="font-extrabold text-3xl text-red-500 pb-3">NERD ALERT !</h3>
+              <p className="text-2xl pb-4">Your GPA is <span className="font-bold bg-gradient-to-r from-red-400 to-orange-400 text-transparent bg-clip-text animate-gradient">{gpa}</span></p>
+              <img src="/nerd_emoji.gif" alt="nerd_emoji_gif" className="w-64" />
+            </div>
         :
         file ?
           <div className="animate-pulse" >
