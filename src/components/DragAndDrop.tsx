@@ -7,7 +7,7 @@ export default function DragAndDrop() {
   const [dragActive, setDragActive] = useState<boolean>(false);
   const inputRef = useRef<any>(null);
   const [file, setFile] = useState();
-  const [gpa, setGpa] = useState<any>(3.8);
+  const [gpa, setGpa] = useState<any>(null);
   // const url = "http://127.0.0.1:5000/gpa";
   const url = "https://cafentson.pythonanywhere.com/gpa";
   useEffect(() => {
