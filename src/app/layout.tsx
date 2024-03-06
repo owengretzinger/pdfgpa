@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
+import { BackgroundBeams } from "@/components/BackgroundBeams";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -36,7 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-black ${nunito.className}`}>{children}</body>
+      <body className={`bg-black ${nunito.className}`}>
+        <BackgroundBeams />
+        {children}
+      </body>
     </html>
   );
 }
