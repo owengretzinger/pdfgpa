@@ -1,11 +1,8 @@
 "use client";
 
 import { IoCloudUploadOutline } from "react-icons/io5";
-
 import { useEffect, useRef, useState } from "react";
-
 import { GPA } from "./gpa";
-
 
 export default function DragAndDrop() {
   const [dragActive, setDragActive] = useState<boolean>(false);
@@ -95,8 +92,8 @@ export default function DragAndDrop() {
           </div>
           :
           <form
-            className={`${dragActive ? "bg-blue-400" : ""
-              }  px-16 py-8 rounded-lg text-center flex flex-col items-center justify-center outline-dashed outline-2 outline-white cursor-pointer`}
+            className={`${dragActive ? "bg-darkgrey -translate-y-1" : "bg-black"
+              }  px-16 py-8 rounded-lg text-center flex flex-col items-center justify-center outline-dashed outline-2 outline-white cursor-pointer relative z-50 shadow-lg shadow-white/20 transition-transform duration-500`}
             onDragEnter={handleDragEnter}
             onSubmit={(e) => e.preventDefault()}
             onDrop={handleDrop}
