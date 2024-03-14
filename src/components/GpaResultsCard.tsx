@@ -18,9 +18,9 @@ export function GPA({
 }) {
   return (
     <CardContainer
-      className={`inter-var mt-20 rounded-lg border bg-black text-white`}
+      className={`inter-var z-10 -mt-8 rounded-lg border bg-black text-white`}
     >
-      <CardBody className='group/card relative h-auto min-w-[35rem] rounded-lg px-10 pb-8 pt-6 shadow-2xl shadow-green-300/[0.4] outline outline-2 outline-white'>
+      <CardBody className='group/card relative h-auto min-w-[35rem] rounded-lg bg-black px-10 pb-8 pt-6 shadow-2xl shadow-green-300/[0.4] outline outline-2 outline-white'>
         <CardItem as='p' translateZ='40'>
           <p className='pb-6'>
             Your GPA is{' '}

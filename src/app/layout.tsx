@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
 import './globals.css';
 import { BackgroundBeams } from '@/components/aceternity/BackgroundBeams';
+import AuthorsLink from '@/components/AuthorsLink';
 
 const nunito = Nunito({ subsets: ['latin'] });
 
@@ -40,9 +41,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`bg-black ${nunito.className}`}>
-        <BackgroundBeams />
+      <body className={`relative bg-black ${nunito.className}`}>
         {children}
+        <AuthorsLink />
+        <div className='fixed left-0 top-0 -z-10 h-screen w-screen'>
+          <BackgroundBeams />
+        </div>
       </body>
     </html>
   );
