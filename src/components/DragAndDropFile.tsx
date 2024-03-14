@@ -54,7 +54,7 @@ export default function DragAndDropFile() {
     <form
       className={`${
         dragActive ? '-translate-y-1 bg-darkgrey' : 'bg-black'
-      }  relative z-50 flex cursor-pointer flex-col items-center justify-center rounded-lg px-16 py-8 text-center shadow-lg shadow-white/20 outline-dashed outline-2 outline-white transition-transform duration-500`}
+      }  relative z-50 flex cursor-pointer flex-col items-center justify-center rounded-lg px-16 py-8 text-center shadow-lg shadow-white/20 outline-dashed outline-2 outline-white transition-transform duration-500 hover:bg-darkgrey`}
       onDragEnter={handleDragEnter}
       onSubmit={(e) => e.preventDefault()}
       onDrop={handleDrop}

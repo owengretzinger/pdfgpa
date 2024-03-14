@@ -1,35 +1,35 @@
-import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
-import "./globals.css";
-import { BackgroundBeams } from "@/components/aceternity/BackgroundBeams";
+import type { Metadata } from 'next';
+import { Nunito } from 'next/font/google';
+import './globals.css';
+import { BackgroundBeams } from '@/components/aceternity/BackgroundBeams';
 
-const nunito = Nunito({ subsets: ["latin"] });
+const nunito = Nunito({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "McMaster GPA Calculator",
+  title: 'McMaster GPA Calculator',
   description:
-    "Upload your McMaster transcript to calculate your GPA on a 4.00 scale.",
+    'Upload your McMaster transcript to calculate your GPA on a 4.00 scale.',
   keywords:
-    "McMaster, GPA, CGPA, pdf, transcript, calculator, McMaster University, McMaster GPA Calculator, McMaster GPA, McMaster CGPA",
+    'McMaster, GPA, CGPA, pdf, transcript, calculator, McMaster University, McMaster GPA Calculator, McMaster GPA, McMaster CGPA',
   openGraph: {
-    title: "McMaster GPA Calculator",
+    title: 'McMaster GPA Calculator',
     description:
-      "Upload your McMaster transcript to calculate your GPA on a 4.00 scale.",
-    url: "https://pdfgpa.vercel.app",
+      'Upload your McMaster transcript to calculate your GPA on a 4.00 scale.',
+    url: 'https://pdfgpa.vercel.app',
     images: {
-      url: "",
-      alt: "McMaster GPA Calculator",
+      url: '',
+      alt: 'McMaster GPA Calculator',
     },
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
   robots: {
     index: true,
     follow: true,
   },
-  metadataBase: new URL("https://pdfgpa.vercel.app"),
+  metadataBase: new URL('https://pdfgpa.vercel.app'),
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
 };
 
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={`bg-black ${nunito.className}`}>
         <BackgroundBeams />
         {children}
