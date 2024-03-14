@@ -9,6 +9,7 @@
   --color-yellow: 58 224 103;
   /* --color-yellow: 251 169 44; */
   --color-white: 255 255 255;
+  overflow-x: hidden;
 }
 
 @layer utilities {

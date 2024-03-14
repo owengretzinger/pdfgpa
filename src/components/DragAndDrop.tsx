@@ -2,13 +2,15 @@
 
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { GPA } from "./gpa";
 
 export default function DragAndDrop() {
   const [dragActive, setDragActive] = useState<boolean>(false);
   const inputRef = useRef<any>(null);
   const [file, setFile] = useState();
   const [gpa, setGpa] = useState<any>(null);
+  const [courselist, setCourselist] = useState<any>(null);
+
   // const url = "http://127.0.0.1:5000/gpa";
   const url = "https://cafentson.pythonanywhere.com/gpa";
   useEffect(() => {
@@ -25,6 +27,7 @@ export default function DragAndDrop() {
           (data) => {
             console.log(data)
             setGpa(data.gpa)
+            setCourselist(data.course_list)
           }
         ).catch(
           (error) => {
@@ -81,11 +84,7 @@ export default function DragAndDrop() {
             <p className="text-2xl">Something went wrong :(</p>
           </div>
           :
-          <div>
-            {gpa >= 3.8 && <h3 className="font-extrabold text-3xl text-red-500 pb-3">NERD ALERT !</h3>}
-            <p className="text-2xl pb-4">Your GPA is <span className="font-bold bg-gradient-to-r from-red-400 to-orange-400 text-transparent bg-clip-text animate-gradient">{gpa.toFixed(2)}</span></p>
-            {gpa >= 3.8 && <Image width={256} height={256} src="/nerd_emoji.gif" alt="nerd_emoji_gif" className="w-64" />}
-          </div>
+          <GPA gpa={gpa} courselist={courselist} />
         :
         file ?
           <div className="animate-pulse" >
