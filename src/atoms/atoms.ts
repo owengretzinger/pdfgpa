@@ -34,3 +34,9 @@ export const uploadFileAtom = atom(null, async (get, set, file: File) => {
     console.error(error);
   }
 });
+
+export const resetAllAtom = atom(null, (get, set) => {
+  set(gpaAtom, -1);
+  set(courselistAtom, []);
+  set(uploadStatusAtom, 'waiting');
+});
