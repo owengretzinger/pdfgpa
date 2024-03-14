@@ -1,32 +1,35 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import { BackgroundBeams } from "@/components/BackgroundBeams";
+import { BackgroundBeams } from "@/components/aceternity/BackgroundBeams";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'McMaster GPA Calculator',
-  description: "Upload your McMaster transcript to calculate your GPA on a 4.00 scale.",
-  keywords: 'McMaster, GPA, CGPA, pdf, transcript, calculator, McMaster University, McMaster GPA Calculator, McMaster GPA, McMaster CGPA',
+  title: "McMaster GPA Calculator",
+  description:
+    "Upload your McMaster transcript to calculate your GPA on a 4.00 scale.",
+  keywords:
+    "McMaster, GPA, CGPA, pdf, transcript, calculator, McMaster University, McMaster GPA Calculator, McMaster GPA, McMaster CGPA",
   openGraph: {
-    title: 'McMaster GPA Calculator',
-    description: "Upload your McMaster transcript to calculate your GPA on a 4.00 scale.",
-    url: 'https://pdfgpa.vercel.app',
+    title: "McMaster GPA Calculator",
+    description:
+      "Upload your McMaster transcript to calculate your GPA on a 4.00 scale.",
+    url: "https://pdfgpa.vercel.app",
     images: {
-      url: '',
-      alt: 'McMaster GPA Calculator'
+      url: "",
+      alt: "McMaster GPA Calculator",
     },
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   robots: {
     index: true,
     follow: true,
   },
-  metadataBase: new URL('https://pdfgpa.vercel.app'),
+  metadataBase: new URL("https://pdfgpa.vercel.app"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
 };
 
